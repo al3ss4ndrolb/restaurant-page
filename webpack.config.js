@@ -9,10 +9,12 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    assetModuleFilename: "images/[name][ext]",
   },
   devtool: "eval-source-map",
   devServer: {
-    watchFiles: ["./src/template.html"],
+    static: "./dist",
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
